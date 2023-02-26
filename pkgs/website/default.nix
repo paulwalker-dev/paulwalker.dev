@@ -13,7 +13,7 @@ pkgs.stdenv.mkDerivation rec {
     })
   ];
   sourceRoot = "src";
-  nativeBuildInputs = with pkgs; [ hugo git ];
+  nativeBuildInputs = with pkgs; [ hugo ];
   phases = [ "unpackPhase" "buildPhase" ];
   buildPhase = ''
     tmpdir=$(mktemp -d)
