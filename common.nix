@@ -4,8 +4,6 @@
   users.users.admin = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    hashedPassword = import ./secrets/password.nix;
-    openssh.authorizedKeys.keys = import ./secrets/keys.nix;
   };
 
   services.openssh.enable = true;
