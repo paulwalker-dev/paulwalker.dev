@@ -1,0 +1,27 @@
+baseURL = "https://www.paulwalker.dev/"
+languageCode = "en-us"
+title = 'Paul Walker'
+theme = 'terminal'
+
+[params]
+contentTypeName = "posts"
+#themeColor = "orange"
+centerTheme = true
+#favicon = "favicon.ico"
+
+env = "production"
+
+[params.logo]
+logoText = "Paul Walker"
+
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 10
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/info/about"
+weight = 20
