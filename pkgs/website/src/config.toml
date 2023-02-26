@@ -14,14 +14,14 @@ env = "production"
 [params.logo]
 logoText = "Paul Walker"
 
-[[menu.main]]
-identifier = "home"
-name = "Home"
-url = "/"
-weight = 10
-
-[[menu.main]]
-identifier = "about"
-name = "About"
-url = "/info/about"
-weight = 20
+#[[menu.main]]
+#identifier = "home"
+#name = "Home"
+#url = "/"
+#weight = 10
+#
+#[[menu.main]]
+#identifier = "about"
+#name = "About"
+#url = "/info/about"
+#weight = 20
