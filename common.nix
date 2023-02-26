@@ -15,4 +15,7 @@
       options = [ "NOPASSWD" ];
     }];
   }];
+
+  security.acme.acceptTerms = true;
+  security.acme.defaults.email = "paulwalker@paulwalker.dev";
 }

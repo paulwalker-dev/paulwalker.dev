@@ -1,4 +1,4 @@
-{ lib, pkg, ... }: {
+{ lib, pkgs, ... }: {
   containers.minecraft = {
     ephemeral = true;
     autoStart = true;

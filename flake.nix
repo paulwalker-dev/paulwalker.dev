@@ -19,18 +19,28 @@
       inherit (lib) mkConfig mkNode;
     in {
       nixosConfigurations = {
-        minecraft = mkConfig {
+        #minecraft = mkConfig {
+        #  inherit system;
+        #  hostname = "minecraft";
+        #  configName = "minecraft";
+        #  hardware = "qemu";
+        #};
+        www = mkConfig {
           inherit system;
-          hostname = "minecraft";
-          configName = "minecraft";
+          hostname = "www";
+          configName = "www";
           hardware = "qemu";
         };
       };
 
       deploy.nodes = {
-        minecraft = mkNode {
-          hostname = "mc.paulwalker.dev";
-          configName = "minecraft";
+        #minecraft = mkNode {
+        #  hostname = "mc.paulwalker.dev";
+        #  configName = "minecraft";
+        #};
+        www = mkNode {
+          hostname = "www.paulwalker.dev";
+          configName = "www";
         };
       };
 
