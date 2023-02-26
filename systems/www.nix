@@ -4,9 +4,7 @@
     virtualHosts."www.paulwalker.dev" = {
       addSSL = true;
       enableACME = true;
-      root = import ../pkgs/website {
-        inherit pkgs;
-      };
+      root = import ../pkgs/website { inherit pkgs; };
     };
   };
 
