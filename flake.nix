@@ -34,14 +34,15 @@
       };
 
       deploy.nodes = {
-        #www = mkNode {
-        #  hostname = "www.paulwalker.dev";
-        #  configName = "www";
-        #};
-        play = mkNode {
-          hostname = "play.paulwalker.dev";
-          configName = "play";
+        www = mkNode {
+          hostname = "www.paulwalker.dev";
+          configName = "www";
         };
+        #play = mkNode {
+        #  hostname = "play.paulwalker.dev";
+        #  configName = "play";
+        #  magicRollback = false;
+        #};
       };
 
       checks = builtins.mapAttrs

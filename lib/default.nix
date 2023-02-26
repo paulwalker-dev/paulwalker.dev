@@ -12,13 +12,13 @@
         [ ../hardware/${hardware}.nix ]);
     };
 
-  mkNode = { hostname, sshOpts ? [ ], configName, ... }:
+  mkNode = { hostname, magicRollback ? true, configName, ... }:
     let nixosConfig = nixosConfigurations.${configName};
     in {
       inherit hostname;
       profiles = {
         system = {
-          inherit sshOpts;
+          inherit magicRollback;
           sshUser = "admin";
           path = deploy-rs.lib.${system}.activate.nixos nixosConfig;
           user = "root";
