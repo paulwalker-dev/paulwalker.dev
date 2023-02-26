@@ -1,4 +1,6 @@
-{ config, lib, ... }: {
+{ config, lib, modulesPath, ... }: {
+  imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
+
   boot.loader.grub = {
     enable = true;
     version = 2;

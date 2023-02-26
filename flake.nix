@@ -23,14 +23,24 @@
           inherit system;
           hostname = "www";
           configName = "www";
-          hardware = "qemu";
+          hardware = "onegrid";
+        };
+        play = mkConfig {
+          inherit system;
+          hostname = "play";
+          configName = "play";
+          hardware = "onegrid";
         };
       };
 
       deploy.nodes = {
-        www = mkNode {
-          hostname = "www.paulwalker.dev";
-          configName = "www";
+        #www = mkNode {
+        #  hostname = "www.paulwalker.dev";
+        #  configName = "www";
+        #};
+        play = mkNode {
+          hostname = "play.paulwalker.dev";
+          configName = "play";
         };
       };
 
