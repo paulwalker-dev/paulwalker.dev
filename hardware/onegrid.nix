@@ -19,8 +19,37 @@
   boot.kernelModules = [ "kvm-intel" ];
 
   fileSystems."/" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [ "defaults" "size=2G" "mode=755" ];
+  };
+
+  fileSystems."/boot" = {
     device = "/dev/vda1";
     fsType = "ext4";
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/vda3";
+    fsType = "ext4";
+  };
+
+  fileSystems."/etc/nixos" = {
+    device = "/nix/persist/etc/nixos";
+    fsType = "none";
+    options = [ "bind" ];
+  };
+
+  fileSystems."/var/log" = {
+    device = "/nix/persist/var/log";
+    fsType = "none";
+    options = [ "bind" ];
+  };
+
+  fileSystems."/home" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [ "defaults" "size=4G" "mode=755" ];
   };
 
   swapDevices = [{ device = "/dev/vda2"; }];
@@ -29,5 +58,5 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode =
-    lib.mkDefault config.hardware.enableRedistributableFirmware;
+  lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

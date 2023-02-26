@@ -30,6 +30,12 @@
   networking.firewall.allowedTCPPorts = [ 22 7777 ];
 
   system.activationScripts.makeTerrariaDir = lib.stringAfter [ "var" ] ''
-    mkdir -p /var/lib/terraria
+    mkdir -p /nix/persist/var/lib/terraria
   '';
+
+  fileSystems."/var/lib/terraria" = {
+    device = "/nix/persist/var/lib/terraria";
+    fsType = "none";
+    options = [ "bind" ];
+  };
 }
