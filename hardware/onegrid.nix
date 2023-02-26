@@ -40,16 +40,16 @@
     options = [ "bind" ];
   };
 
-  fileSystems."/etc/ssh" = {
-    device = "/nix/persist/etc/ssh";
-    fsType = "none";
-    options = [ "bind" ];
-  };
-
   fileSystems."/var/log" = {
     device = "/nix/persist/var/log";
     fsType = "none";
     options = [ "bind" ];
+  };
+
+  fileSystems."/home" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [ "defaults" "size=4G" "mode=755" ];
   };
 
   swapDevices = [{ device = "/dev/vda2"; }];
