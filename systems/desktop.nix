@@ -1,6 +1,8 @@
 { config, pkgs, ... }: {
   networking.networkmanager.enable = true;
 
+  services.xserver.enable = true;
+
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   services.pipewire = {
@@ -18,4 +20,9 @@
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+
+  programs.steam.enable = true;
+  environment.systemPackages = with pkgs; [
+    steam
+  ];
 }

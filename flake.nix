@@ -56,11 +56,11 @@
           hostname = "www.paulwalker.dev";
           configName = "www";
         };
-        #play = mkNode {
-        #  hostname = "play.paulwalker.dev";
-        #  configName = "play";
-        #  magicRollback = false;
-        #};
+        play = mkNode {
+          hostname = "play.paulwalker.dev";
+          configName = "play";
+          magicRollback = false;
+        };
       };
 
       checks = builtins.mapAttrs
