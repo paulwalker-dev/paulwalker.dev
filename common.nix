@@ -9,7 +9,7 @@
   services.openssh.enable = true;
 
   security.sudo.extraRules = [{
-    groups = [ "wheel" ];
+    users = [ "admin" ];
     commands = [{
       command = "ALL";
       options = [ "NOPASSWD" ];

@@ -1,18 +1,21 @@
 {
   description = "A very basic flake";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  inputs.deploy-rs.url = "github:serokell/deploy-rs";
-  inputs.deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    deploy-rs.url = "github:serokell/deploy-rs";
+    deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+  };
 
-  outputs = { self, nixpkgs, deploy-rs }:
+  outputs = { self, nixpkgs, deploy-rs, home-manager }:
     let
       system = "x86_64-linux";
 
       lib = import ./lib {
         inherit system;
-        inherit nixpkgs;
-        inherit deploy-rs;
+        inherit nixpkgs deploy-rs home-manager;
         inherit (self) nixosConfigurations;
       };
 
@@ -30,6 +33,12 @@
           hostname = "play";
           configName = "play";
           hardware = "onegrid";
+        };
+        pauls-laptop = mkConfig {
+          inherit system;
+          hostname = "pauls-laptop";
+          configName = "laptop";
+          hardware = "laptop";
         };
       };
 
