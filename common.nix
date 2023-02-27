@@ -1,5 +1,8 @@
 { lib, pkgs, ... }: {
   nix.settings.trusted-users = [ "@wheel" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  time.timeZone = "US/Eastern";
 
   users.users.admin = {
     isNormalUser = true;

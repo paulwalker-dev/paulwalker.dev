@@ -1,5 +1,5 @@
 { system, nixpkgs, deploy-rs, home-manager, nixosConfigurations }: {
-  mkConfig = { hostname, configName, hardware, server ? false, ... }:
+  mkConfig = { hostname, configName, hardware, server ? true, ... }:
     nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [

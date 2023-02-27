@@ -34,11 +34,13 @@
           configName = "play";
           hardware = "onegrid";
         };
+
         pauls-laptop = mkConfig {
           inherit system;
           hostname = "pauls-laptop";
           configName = "laptop";
           hardware = "laptop";
+          server = false;
         };
       };
 
