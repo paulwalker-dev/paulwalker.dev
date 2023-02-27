@@ -1,5 +1,12 @@
 { config, pkgs, ... }: {
-  imports = [ ./desktop.nix ];
+  networking.networkmanager.enable = true;
+
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   networking.firewall.enable = true;
   networking.hosts = {
