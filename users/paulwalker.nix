@@ -1,19 +1,42 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   home.username = "paulwalker";
   home.homeDirectory = "/home/paulwalker";
 
   home.packages = with pkgs; [ firefox ];
 
-  programs.vim = {
+  wayland.windowManager.sway = {
     enable = true;
-    extraConfig = "colorscheme onedark";
-    plugins = with pkgs.vimPlugins; [ vim-polyglot onedark-vim ];
-    settings = {
-      expandtab = true;
-      shiftwidth = 4;
-      tabstop = 4;
-      relativenumber = true;
-      number = true;
+    config = rec {
+      modifier = "Mod4";
+      terminal = "alacritty";
+      keybindings = lib.mkOptionDefault {
+        "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
+        "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
+        "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+      };
+    };
+  };
+
+  programs = {
+    alacritty.enable = true;
+
+    git = {
+      enable = true;
+      userName = "Paul Walker";
+      userEmail = "paulwalker@paulwalker.dev";
+    };
+
+    vim = {
+      enable = true;
+      extraConfig = "colorscheme monokai";
+      plugins = with pkgs.vimPlugins; [ vim-polyglot vim-monokai ];
+      settings = {
+        expandtab = true;
+        shiftwidth = 4;
+        tabstop = 4;
+        relativenumber = true;
+        number = true;
+      };
     };
   };
 

@@ -35,6 +35,13 @@
           hardware = "onegrid";
         };
 
+        pauls-desktop = mkConfig {
+          inherit system;
+          hostname = "pauls-desktop";
+          configName = "desktop";
+          hardware = "desktop";
+          server = false;
+        };
         pauls-laptop = mkConfig {
           inherit system;
           hostname = "pauls-laptop";

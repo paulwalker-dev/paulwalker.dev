@@ -21,4 +21,6 @@
 
   security.acme.acceptTerms = true;
   security.acme.defaults.email = "paulwalker@paulwalker.dev";
+
+  environment.systemPackages = with pkgs; [ vim git ];
 }

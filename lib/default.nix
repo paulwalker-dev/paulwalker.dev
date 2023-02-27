@@ -3,6 +3,7 @@
     nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
+        ./vm.nix
         ../common.nix
         ../systems/${configName}.nix
         ../hardware/${hardware}.nix
