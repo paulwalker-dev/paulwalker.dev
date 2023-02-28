@@ -2,6 +2,7 @@
   networking.networkmanager.enable = true;
 
   services.xserver.enable = true;
+  services.xserver.displayManager.startx.enable = true;
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -14,7 +15,6 @@
   fonts.enableDefaultFonts = true;
 
   security.polkit.enable = true;
-  services.dbus.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = true;
