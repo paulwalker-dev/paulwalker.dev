@@ -1,6 +1,7 @@
 { system, nixpkgs, deploy-rs, home-manager, nixosConfigurations }: {
   mkConfig = { hostname, configName, hardware, server ? true, ... }:
-    nixpkgs.lib.nixosSystem {
+    let users = import ../users;
+    in nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
         ./vm.nix
@@ -18,12 +19,12 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users =
-            builtins.mapAttrs (name: user: user.config) (import ../users);
+            builtins.mapAttrs (name: user: user.config) users;
 
           users.users = builtins.mapAttrs (name: user: {
             isNormalUser = true;
             extraGroups = if user.admin then [ "wheel" ] else [ ];
-          }) (import ../users);
+          }) users;
         }
       ]);
     };
