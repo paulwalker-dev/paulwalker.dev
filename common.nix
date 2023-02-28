@@ -2,6 +2,8 @@
   nix.settings.trusted-users = [ "@wheel" ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  boot.cleanTmpDir = true;
+
   time.timeZone = "US/Eastern";
 
   users.users.admin = {
