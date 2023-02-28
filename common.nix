@@ -23,4 +23,6 @@
   security.acme.defaults.email = "paulwalker@paulwalker.dev";
 
   environment.systemPackages = with pkgs; [ vim git ];
+
+  system.stateVersion = "23.05";
 }

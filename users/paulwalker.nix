@@ -2,7 +2,7 @@
   home.username = "paulwalker";
   home.homeDirectory = "/home/paulwalker";
 
-  home.packages = with pkgs; [ firefox ];
+  home.packages = with pkgs; [ bottles pstree firefox ];
 
   wayland.windowManager.sway = {
     enable = true;
