@@ -20,7 +20,4 @@
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
-
-  programs.steam.enable = true;
-  environment.systemPackages = with pkgs; [ steam ];
 }
