@@ -44,7 +44,7 @@
         };
         pauls-laptop = mkConfig {
           inherit system;
-          hostname = "pauls-laptop";
+          hostname = "";
           configName = "laptop";
           hardware = "laptop";
           server = false;
@@ -52,15 +52,15 @@
       };
 
       deploy.nodes = {
-        #www = mkNode {
-        #  hostname = "www.paulwalker.dev";
-        #  configName = "www";
-        #};
-        play = mkNode {
-          hostname = "play.paulwalker.dev";
-          configName = "play";
-          magicRollback = false;
+        www = mkNode {
+          hostname = "www.paulwalker.dev";
+          configName = "www";
         };
+        #play = mkNode {
+        #  hostname = "play.paulwalker.dev";
+        #  configName = "play";
+        #  magicRollback = false;
+        #};
       };
 
       checks = builtins.mapAttrs
