@@ -1,4 +1,6 @@
 { lib, pkgs, ... }: {
+  imports = [ ./www.nix ];
+
   containers = {
     terraria = {
       ephemeral = true;

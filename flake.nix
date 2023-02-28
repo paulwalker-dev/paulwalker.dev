@@ -52,10 +52,10 @@
       };
 
       deploy.nodes = {
-        www = mkNode {
-          hostname = "www.paulwalker.dev";
-          configName = "www";
-        };
+        #www = mkNode {
+        #  hostname = "www.paulwalker.dev";
+        #  configName = "www";
+        #};
         play = mkNode {
           hostname = "play.paulwalker.dev";
           configName = "play";
