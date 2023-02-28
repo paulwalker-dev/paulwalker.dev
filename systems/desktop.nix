@@ -22,7 +22,5 @@
   };
 
   programs.steam.enable = true;
-  environment.systemPackages = with pkgs; [
-    steam
-  ];
+  environment.systemPackages = with pkgs; [ steam ];
 }

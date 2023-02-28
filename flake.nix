@@ -20,6 +20,7 @@
       };
 
       inherit (lib) mkConfig mkNode;
+      pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations = {
         www = mkConfig {
@@ -61,6 +62,14 @@
         #  configName = "play";
         #  magicRollback = false;
         #};
+      };
+
+      devShells.${system}.default = pkgs.mkShell {
+        packages = with pkgs; [
+          nixfmt
+          hugo
+          deploy-rs.packages.${system}.deploy-rs
+        ];
       };
 
       checks = builtins.mapAttrs

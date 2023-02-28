@@ -10,8 +10,10 @@
       modifier = "Mod4";
       terminal = "alacritty";
       keybindings = lib.mkOptionDefault {
-        "XF86AudioRaiseVolume" = "exec wpctl set-sink-volume @DEFAULT_SINK@ +5%";
-        "XF86AudioLowerVolume" = "exec wpctl set-sink-volume @DEFAULT_SINK@ -5%";
+        "XF86AudioRaiseVolume" =
+          "exec wpctl set-sink-volume @DEFAULT_SINK@ +5%";
+        "XF86AudioLowerVolume" =
+          "exec wpctl set-sink-volume @DEFAULT_SINK@ -5%";
         "XF86AudioMute" = "exec wpctl set-sink-mute @DEFAULT_SINK@ toggle";
       };
     };
@@ -19,6 +21,10 @@
 
   programs = {
     alacritty.enable = true;
+    bash.enable = true;
+
+    direnv.enable = true;
+    direnv.nix-direnv.enable = true;
 
     git = {
       enable = true;
