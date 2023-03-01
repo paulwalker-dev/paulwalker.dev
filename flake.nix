@@ -2,7 +2,7 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
     deploy-rs.url = "github:serokell/deploy-rs";
     deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
@@ -45,7 +45,8 @@
         pauls-desktop = mkConfig {
           inherit system;
           hostname = "pauls-desktop";
-          configName = "desktop";
+          #configName = "desktop";
+          configName = "gnome";
           hardware = "desktop";
           server = false;
         };
