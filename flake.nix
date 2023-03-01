@@ -35,12 +35,6 @@
           configName = "play";
           hardware = "onegrid";
         };
-        meta = mkConfig {
-          inherit system;
-          hostname = "meta";
-          configName = "meta";
-          hardware = "onegrid";
-        };
 
         pauls-desktop = mkConfig {
           inherit system;
@@ -67,20 +61,15 @@
       };
 
       deploy.nodes = {
-        #www = mkNode {
-        #  hostname = "www.paulwalker.dev";
-        #  configName = "www";
-        #};
+        www = mkNode {
+          hostname = "www.paulwalker.dev";
+          configName = "www";
+        };
         #play = mkNode {
         #  hostname = "play.paulwalker.dev";
         #  configName = "play";
         #  magicRollback = false;
         #};
-        meta = mkNode {
-          hostname = "www.paulwalker.dev";
-          configName = "meta";
-          magicRollback = false;
-        };
       };
 
       devShells.${system}.default = pkgs.mkShell {
