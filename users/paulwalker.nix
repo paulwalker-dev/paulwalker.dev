@@ -7,7 +7,7 @@
     pstree
     firefox
     # Games
-    prismlauncher
+    #prismlauncher
   ];
 
   wayland.windowManager.sway = {
