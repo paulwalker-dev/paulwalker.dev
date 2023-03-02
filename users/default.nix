@@ -1,7 +1,7 @@
 let
   mkUser = { username, admin ? false, backup ? false, ssh ? [ ] }: {
     inherit username admin backup ssh;
-    config = import ./${username}.nix;
+    config = import ./${username};
   };
 in {
   paulwalker = mkUser {
