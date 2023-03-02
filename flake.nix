@@ -38,7 +38,6 @@
         pauls-desktop = mkConfig {
           inherit system;
           hostname = "pauls-desktop";
-          #configName = "desktop";
           configName = "gnome";
           hardware = "desktop";
           server = false;
@@ -54,7 +53,7 @@
           inherit system;
           hostname = "vm";
           configName = "gnome";
-          hardware = "none";
+          hardware = "desktop";
           server = false;
         };
       };
