@@ -62,6 +62,7 @@
 
       deploy.nodes = {
         www = mkNode {
+          inherit system;
           hostname = "www.paulwalker.dev";
           configName = "www";
         };
