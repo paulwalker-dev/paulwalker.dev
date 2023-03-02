@@ -10,19 +10,6 @@
     #prismlauncher
   ];
 
-  wayland.windowManager.sway = {
-    enable = true;
-    config = rec {
-      modifier = "Mod4";
-      terminal = "alacritty";
-      keybindings = lib.mkOptionDefault {
-        "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%+";
-        "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%-";
-        "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_SINK@ toggle";
-      };
-    };
-  };
-
   programs = {
     alacritty.enable = true;
     bash.enable = true;
@@ -36,17 +23,18 @@
       userEmail = "paulwalker@paulwalker.dev";
     };
 
-    vim = {
+    neovim = {
       enable = true;
-      extraConfig = "colorscheme monokai";
+      vimAlias = true;
+      coc.enable = true;
+      extraConfig = ''
+        set expandtab
+        set shiftwidth=4
+        set tabstop=4
+        set nu rnu
+        colorscheme monokai
+      '';
       plugins = with pkgs.vimPlugins; [ vim-polyglot vim-monokai ];
-      settings = {
-        expandtab = true;
-        shiftwidth = 4;
-        tabstop = 4;
-        relativenumber = true;
-        number = true;
-      };
     };
   };
 
