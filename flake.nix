@@ -50,11 +50,11 @@
           hardware = "laptop";
           server = false;
         };
-        pauls-vm = mkConfig {
+        vm = mkConfig {
           inherit system;
-          hostname = "pauls-vm";
+          hostname = "vm";
           configName = "gnome";
-          hardware = "onegrid";
+          hardware = "none";
           server = false;
         };
       };

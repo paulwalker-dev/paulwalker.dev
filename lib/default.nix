@@ -4,16 +4,16 @@
     in nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        ./vm.nix
         ../common.nix
         ../systems/${configName}.nix
         ../hardware/${hardware}.nix
         { networking.hostName = hostname; }
+        (import ./vm.nix { inherit users; })
       ] ++ (if server then
         [ ]
       else [
-        home-manager.nixosModules.home-manager
         (import ./backup.nix { inherit users hostname; })
+        home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
