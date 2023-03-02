@@ -55,7 +55,7 @@
           inherit system;
           hostname = "pauls-vm";
           configName = "gnome";
-          hardware = "desktop";
+          hardware = "onegrid";
           server = false;
         };
       };
