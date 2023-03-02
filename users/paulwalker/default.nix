@@ -5,9 +5,10 @@
   home.packages = with pkgs; [
     asciinema
     pstree
+    # Gui apps
     firefox
     # Games
-    #prismlauncher
+    prismlauncher
   ];
 
   dconf = {
@@ -17,11 +18,14 @@
         picture-uri = "${./wallpaper.jpg}";
         picture-uri-dark = "${./wallpaper.jpg}";
       };
+      "org/gnome/desktop/interface" = {
+        clock-format = "12h";
+        color-scheme = "prefer-dark";
+      };
     };
   };
 
   programs = {
-    alacritty.enable = true;
     bash.enable = true;
 
     direnv.enable = true;
