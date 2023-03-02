@@ -1,5 +1,5 @@
-{ system, nixpkgs, deploy-rs, home-manager, nixosConfigurations }: {
-  mkConfig = { hostname, configName, hardware, server ? true, ... }:
+{ nixpkgs, deploy-rs, home-manager, nixosConfigurations }: {
+  mkConfig = { system, hostname, configName, hardware, server ? true, ... }:
     let users = import ../users;
     in nixpkgs.lib.nixosSystem {
       inherit system;
@@ -27,7 +27,7 @@
       ]);
     };
 
-  mkNode = { hostname, magicRollback ? true, configName, ... }:
+  mkNode = { system, hostname, magicRollback ? true, configName, ... }:
     let nixosConfig = nixosConfigurations.${configName};
     in {
       inherit hostname;
