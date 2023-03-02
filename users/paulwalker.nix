@@ -23,18 +23,17 @@
       userEmail = "paulwalker@paulwalker.dev";
     };
 
-    neovim = {
+    vim = {
       enable = true;
-      vimAlias = true;
-      coc.enable = true;
-      extraConfig = ''
-        set expandtab
-        set shiftwidth=4
-        set tabstop=4
-        set nu rnu
-        colorscheme monokai
-      '';
+      extraConfig = "colorscheme monokai";
       plugins = with pkgs.vimPlugins; [ vim-polyglot vim-monokai ];
+      settings = {
+        expandtab = true;
+        shiftwidth = 4;
+        tabstop = 4;
+        number = true;
+        relativenumber = true;
+      };
     };
   };
 
