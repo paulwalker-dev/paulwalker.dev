@@ -14,7 +14,6 @@
       system = "x86_64-linux";
 
       lib = import ./lib {
-        inherit system;
         inherit nixpkgs deploy-rs home-manager;
         inherit (self) nixosConfigurations;
       };
