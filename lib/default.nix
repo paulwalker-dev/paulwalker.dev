@@ -13,6 +13,7 @@
         [ ]
       else [
         home-manager.nixosModules.home-manager
+        (import ./backup.nix { inherit users hostname; })
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

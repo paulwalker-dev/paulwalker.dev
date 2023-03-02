@@ -1,4 +1,6 @@
 { lib, pkgs, ... }: {
+  imports = [ ./backup.nix ];
+
   services.nginx = {
     enable = true;
     virtualHosts."www.paulwalker.dev" = {

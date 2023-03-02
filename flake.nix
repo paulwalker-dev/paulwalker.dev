@@ -45,7 +45,7 @@
         };
         pauls-laptop = mkConfig {
           inherit system;
-          hostname = "";
+          hostname = "laptop";
           configName = "laptop";
           hardware = "laptop";
           server = false;
