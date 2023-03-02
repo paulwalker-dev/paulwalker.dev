@@ -26,7 +26,7 @@
     vim = {
       enable = true;
       extraConfig = "colorscheme monokai";
-      plugins = with pkgs.vimPlugins; [ vim-polyglot vim-monokai ];
+      plugins = with pkgs.vimPlugins; [ vim-polyglot vim-monokai vim-surround ];
       settings = {
         expandtab = true;
         shiftwidth = 4;
