@@ -13,12 +13,10 @@
   dconf = {
     enable = true;
     settings = {
-      "org/gnome/desktop/background" =
-        let wallpaper = ./wallpaper.jpg;
-        in rec {
-          picture-uri = "${wallpaper}";
-          picture-uri-dark = picture-uri;
-        };
+      "org/gnome/desktop/background" = {
+        picture-uri = "${./wallpaper.jpg}";
+        picture-uri-dark = "${./wallpaper.jpg}";
+      };
     };
   };
 
