@@ -6,6 +6,4 @@ in {
     authorizedKeys = user.ssh;
     allowSubRepos = true;
   }) (lib.filterAttrs (n: user: user.backup) users);
-
-  networking.firewall.allowedTCPPorts = [ 22 ];
 }
