@@ -1,3 +1,1 @@
-{ config, pkgs, ... }: {
-  imports = [ ./gnome.nix ];
-}
+{ config, pkgs, ... }: { imports = [ ./gnome.nix ]; }

@@ -33,6 +33,7 @@
 
   programs = {
     bash.enable = true;
+    fzf.enable = true;
 
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
@@ -45,8 +46,20 @@
 
     vim = {
       enable = true;
-      extraConfig = "colorscheme monokai";
-      plugins = with pkgs.vimPlugins; [ vim-polyglot vim-monokai vim-surround ];
+      extraConfig = ''
+        let mapleader=" "
+        nnoremap <SPACE> <Nop>
+
+        nnoremap <LEADER>o <CMD>FZF<CR>
+
+        colorscheme monokai
+      '';
+      plugins = with pkgs.vimPlugins; [
+        vim-polyglot
+        vim-monokai
+        vim-surround
+        fzf-vim
+      ];
       settings = {
         expandtab = true;
         shiftwidth = 4;
