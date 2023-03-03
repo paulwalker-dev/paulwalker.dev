@@ -6,7 +6,7 @@
     asciinema
     pstree
     # Gui apps
-    firefox
+    chromium
     # Games
     prismlauncher
   ];
@@ -23,6 +23,12 @@
         color-scheme = "prefer-dark";
       };
     };
+  };
+
+  gtk = {
+    enable = true;
+    iconTheme.package = pkgs.papirus-icon-theme;
+    iconTheme.name = "Papirus";
   };
 
   programs = {

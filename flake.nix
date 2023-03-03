@@ -28,12 +28,6 @@
           configName = "www";
           hardware = "onegrid";
         };
-        play = mkConfig {
-          inherit system;
-          hostname = "play";
-          configName = "play";
-          hardware = "onegrid";
-        };
 
         pauls-desktop = mkConfig {
           inherit system;
@@ -64,11 +58,6 @@
           hostname = "www.paulwalker.dev";
           configName = "www";
         };
-        #play = mkNode {
-        #  hostname = "play.paulwalker.dev";
-        #  configName = "play";
-        #  magicRollback = false;
-        #};
       };
 
       devShells.${system}.default = pkgs.mkShell {
