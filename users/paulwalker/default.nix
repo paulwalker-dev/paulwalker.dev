@@ -52,6 +52,9 @@
 
         nnoremap <LEADER>o <CMD>FZF<CR>
 
+        set shiftwidth=4
+        set tabstop=4
+
         colorscheme monokai
       '';
       plugins = with pkgs.vimPlugins; [
@@ -62,8 +65,6 @@
       ];
       settings = {
         expandtab = true;
-        shiftwidth = 4;
-        tabstop = 4;
         number = true;
         relativenumber = true;
       };

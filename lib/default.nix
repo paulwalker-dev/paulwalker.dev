@@ -12,7 +12,7 @@
       ] ++ (if server then
         [ ]
       else [
-        #(import ./backup.nix { inherit users hostname; })
+        (import ./backup.nix { inherit users hostname; })
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

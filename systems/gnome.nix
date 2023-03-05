@@ -7,4 +7,6 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+
+  services.flatpak.enable = true;
 }
