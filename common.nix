@@ -11,7 +11,10 @@
     extraGroups = [ "wheel" ];
   };
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = false;
+  };
 
   security.sudo.extraRules = [{
     users = [ "admin" ];
