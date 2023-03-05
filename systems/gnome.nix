@@ -1,5 +1,6 @@
 { config, pkgs, ... }: {
   networking.networkmanager.enable = true;
+  networking.enableIPv6 = false;
 
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
