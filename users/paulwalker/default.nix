@@ -7,6 +7,7 @@
     pstree
     # Gui apps
     chromium
+    firefox
     # Games
     prismlauncher
   ];
