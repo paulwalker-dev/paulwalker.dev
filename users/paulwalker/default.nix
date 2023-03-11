@@ -2,14 +2,13 @@
   home.username = "paulwalker";
   home.homeDirectory = "/home/paulwalker";
 
+  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     asciinema
     pstree
-    # Gui apps
+    # Internet
     chromium
     firefox
-    # Games
-    prismlauncher
   ];
 
   dconf = {

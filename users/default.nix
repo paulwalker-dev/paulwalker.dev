@@ -9,8 +9,7 @@ in {
     admin = true;
     backup = true;
     ssh = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF7DXKJns7+SW4Vff4R8TofQP2ReyyHy9iVH+ybFgE24"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM53A1rjoG2cQxo9cf6PRBXfqO1bgTkO8elohJm4iZVY"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDGhg55ucXI1rypBjMQBZXsqK2G6OP8sDt9NpAwx+Qms paulwalker@pauls-desktop"
     ];
   };
 }
