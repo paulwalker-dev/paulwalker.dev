@@ -50,6 +50,14 @@
           hardware = "desktop";
           server = false;
         };
+
+        livecd = mkConfig {
+          inherit system;
+          hostname = "livecd";
+          configName = "gnome";
+          hardware = "live";
+          server = false;
+        };
       };
 
       deploy.nodes = {

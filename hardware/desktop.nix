@@ -21,6 +21,7 @@
   swapDevices = [{ device = "/dev/nvme0n1p2"; }];
 
   networking.useDHCP = lib.mkDefault true;
+  networking.networkmanager.enable = true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
