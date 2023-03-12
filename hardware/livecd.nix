@@ -1,8 +1,5 @@
 { config, lib, modulesPath, users, ... }: {
-  imports = [
-    (modulesPath + "/installer/cd-dvd/installation-cd-base.nix")
-    (modulesPath + "installer/cd-dvd/channel.nix")
-  ];
+  imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-base.nix") ];
 
   networking.networkmanager.enable = false;
 

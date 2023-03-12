@@ -55,7 +55,7 @@
           inherit system;
           hostname = "livecd";
           configName = "gnome";
-          hardware = "live";
+          hardware = "livecd";
           server = false;
         };
       };
@@ -69,10 +69,14 @@
       };
 
       devShells.${system}.default = pkgs.mkShell {
-        packages = with pkgs; [
+        buildInputs = with pkgs; [
           nixfmt
           hugo
           deploy-rs.packages.${system}.deploy-rs
+          (import ./pkgs/helper {
+            inherit pkgs;
+            inherit (deploy-rs.packages.${system}) deploy-rs;
+          })
         ];
       };
 

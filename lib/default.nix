@@ -3,9 +3,7 @@
     let users = import ../users;
     in nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = {
-        inherit users;
-      };
+      specialArgs = { inherit users; };
       modules = [
         ../common.nix
         ../systems/${configName}.nix
