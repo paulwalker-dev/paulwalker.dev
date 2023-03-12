@@ -16,7 +16,6 @@
           (nixpkgs.lib.mapAttrsToList (name: user: user.ssh)
             (nixpkgs.lib.filterAttrs (name: user: user.admin) users));
       }] else [
-        #(import ./backup.nix { inherit users hostname; })
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
