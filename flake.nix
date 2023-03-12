@@ -43,6 +43,7 @@
           hardware = "laptop";
           server = false;
         };
+
         vm = mkConfig {
           inherit system;
           hostname = "vm";
@@ -50,7 +51,6 @@
           hardware = "desktop";
           server = false;
         };
-
         livecd = mkConfig {
           inherit system;
           hostname = "livecd";
