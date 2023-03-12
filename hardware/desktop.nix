@@ -9,16 +9,14 @@
   boot.kernelModules = [ "kvm-intel" ];
 
   fileSystems."/" = {
-    device = "/dev/nvme0n1p1";
+    label = "nixos";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/nvme0n1p3";
+    label = "boot";
     fsType = "vfat";
   };
-
-  swapDevices = [{ device = "/dev/nvme0n1p2"; }];
 
   networking.useDHCP = lib.mkDefault true;
   networking.networkmanager.enable = true;
