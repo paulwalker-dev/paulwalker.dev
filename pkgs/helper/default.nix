@@ -16,9 +16,9 @@ pkgs.writeShellScriptBin "sys" ''
     "${deploy-rs}/bin/deploy"
   }
 
-  sys_livecd() {
+  sys_build() {
     "${pkgs.nix}/bin/nix" build \
-      ".#nixosConfigurations.livecd.config.system.build.isoImage"
+      ".#nixosConfigurations.$1.config.system.build.$2"
   }
 
   main() {
@@ -35,7 +35,10 @@ pkgs.writeShellScriptBin "sys" ''
         sys_deploy
         ;;
       livecd)
-        sys_livecd
+        sys_build livecd isoImage
+        ;;
+      vm)
+        sys_build vm vm
         ;;
       *)
         echo "No valid subcommand given"
