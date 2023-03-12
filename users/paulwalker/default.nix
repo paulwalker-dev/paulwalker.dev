@@ -38,6 +38,21 @@
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
 
+    alacritty = {
+      enable = true;
+      settings = {
+        window.dimensions = {
+          columns = 80;
+          lines = 24;
+        };
+        font = {
+          normal.family = "Unifont";
+          bold.style = "Regular";
+          size = 12;
+        };
+      };
+    };
+
     git = {
       enable = true;
       userName = "Paul Walker";

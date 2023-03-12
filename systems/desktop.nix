@@ -9,9 +9,10 @@
   # Hypervisor
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [ virt-manager ];
 
-  environment.systemPackages = [
-    pkgs.discord
+  # Programs
+  environment.systemPackages = with pkgs; [
+    virt-manager
+    discord
   ];
 }
