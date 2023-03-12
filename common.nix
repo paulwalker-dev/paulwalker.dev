@@ -11,6 +11,8 @@
     extraGroups = [ "wheel" ];
   };
 
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [ 22 ];
   services.openssh = {
     enable = true;
     passwordAuthentication = false;
