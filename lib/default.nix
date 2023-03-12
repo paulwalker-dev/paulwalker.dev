@@ -10,9 +10,12 @@
         ../hardware/${hardware}.nix
         { networking.hostName = hostname; }
         (import ./vm.nix { inherit users; })
-      ] ++ (if server then
-        [ ]
-      else [
+      ] ++ (if server then [{
+        users.mutableUsers = false;
+        users.users.admin.openssh.authorizedKeys.keys = builtins.concatLists
+          (nixpkgs.lib.mapAttrsToList (name: user: user.ssh)
+            (nixpkgs.lib.filterAttrs (name: user: user.admin) users));
+      }] else [
         #(import ./backup.nix { inherit users hostname; })
         home-manager.nixosModules.home-manager
         {
