@@ -5,6 +5,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" ];
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelModules = [ "kvm-intel" ];
 
   fileSystems."/" = {
