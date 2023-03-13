@@ -1,5 +1,5 @@
 { nixpkgs, deploy-rs, home-manager, nixosConfigurations }: {
-  mkConfig = { system, hostname, configName, hardware, server ? true, ... }:
+  mkConfig = { system, hostname, configName ? hostname, hardware ? hostname, server ? true, ... }:
     let users = import ../users;
     in nixpkgs.lib.nixosSystem {
       inherit system;

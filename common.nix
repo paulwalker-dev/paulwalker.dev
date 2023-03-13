@@ -11,6 +11,7 @@
     extraGroups = [ "wheel" ];
   };
 
+  networking.domain = "paulwalker.dev";
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
   services.openssh = {

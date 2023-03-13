@@ -9,7 +9,7 @@ pkgs.writeShellScriptBin "sys" ''
     configname="''${2:-$(hostname)}"
 
     sudo "${pkgs.nixos-rebuild}/bin/nixos-rebuild" \
-      "$1" --flake ".#$config_name"
+      "$1" --flake ".#$configname"
   }
 
   sys_deploy() {

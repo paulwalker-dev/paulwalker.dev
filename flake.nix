@@ -25,22 +25,17 @@
         www = mkConfig {
           inherit system;
           hostname = "www";
-          configName = "www";
           hardware = "onegrid";
         };
 
-        pauls-desktop = mkConfig {
+        desktop = mkConfig {
           inherit system;
-          hostname = "pauls-desktop";
-          configName = "desktop";
-          hardware = "desktop";
+          hostname = "desktop";
           server = false;
         };
-        pauls-laptop = mkConfig {
+        laptop = mkConfig {
           inherit system;
-          hostname = "pauls-laptop";
-          configName = "laptop";
-          hardware = "laptop";
+          hostname = "laptop";
           server = false;
         };
 
@@ -48,14 +43,13 @@
           inherit system;
           hostname = "vm";
           configName = "gnome";
-          hardware = "desktop";
+          hardware = "onegrid";
           server = false;
         };
         livecd = mkConfig {
           inherit system;
           hostname = "livecd";
           configName = "gnome";
-          hardware = "livecd";
           server = false;
         };
       };
