@@ -46,6 +46,10 @@
           hardware = "onegrid";
           server = false;
         };
+        kexec = mkConfig {
+          inherit system;
+          hostname = "none";
+        };
         livecd = mkConfig {
           inherit system;
           hostname = "livecd";
