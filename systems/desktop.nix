@@ -11,8 +11,5 @@
   programs.dconf.enable = true;
 
   # Programs
-  environment.systemPackages = with pkgs; [
-    virt-manager
-    discord
-  ];
+  environment.systemPackages = with pkgs; [ virt-manager discord ];
 }

@@ -2,7 +2,6 @@
   home.username = "paulwalker";
   home.homeDirectory = "/home/paulwalker";
 
-  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     asciinema
     pstree
