@@ -6,7 +6,6 @@
       enableACME = true;
       root = import ../pkgs/website { inherit pkgs; };
     };
-    virtualHosts."_" = { root = import ../pkgs/website { inherit pkgs; }; };
   };
 
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
