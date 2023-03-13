@@ -27,6 +27,11 @@
           hostname = "www";
           hardware = "onegrid";
         };
+        staging = mkConfig {
+          inherit system;
+          hostname = "staging";
+          hardware = "onegrid";
+        };
 
         desktop = mkConfig {
           inherit system;
