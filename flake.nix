@@ -67,7 +67,7 @@
           configName = "www";
         };
 
-        raspberrypi = mkConfig {
+        raspberrypi = mkNode {
           system = "aarch64-linux";
           hostname = "raspberrypi";
           configName = "raspberrypi";
