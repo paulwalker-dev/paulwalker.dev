@@ -57,6 +57,17 @@
       userEmail = "paulwalker@paulwalker.dev";
     };
 
+    ssh = {
+      enable = true;
+      matchBlocks = {
+        "www.paulwalker.dev" = {
+          hostname = "www.paulwalker.dev";
+          user = "admin";
+          port = 49342;
+        };
+      };
+    };
+
     vim = {
       enable = true;
       extraConfig = ''
