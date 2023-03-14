@@ -5,8 +5,6 @@
   home.packages = with pkgs; [
     asciinema
     pstree
-    # Extra
-    blender
     # Internet
     chromium
     firefox
