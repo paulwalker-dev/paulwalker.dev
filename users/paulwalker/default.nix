@@ -35,6 +35,7 @@
   programs = {
     bash.enable = true;
     fzf.enable = true;
+    starship.enable = true;
 
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
@@ -46,11 +47,7 @@
           columns = 80;
           lines = 24;
         };
-        font = {
-          normal.family = "Unifont";
-          bold.style = "Regular";
-          size = 12;
-        };
+        font.size = 9;
       };
     };
 
