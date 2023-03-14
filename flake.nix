@@ -22,34 +22,34 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations = {
+        # Servers
         www = mkConfig {
           inherit system;
           hostname = "www";
           hardware = "vm";
+          server = true;
         };
 
+        # Personal computers
         desktop = mkConfig {
           inherit system;
           hostname = "desktop";
-          server = false;
         };
         laptop = mkConfig {
           inherit system;
           hostname = "laptop";
-          server = false;
         };
 
+        # Deployment
         vm = mkConfig {
           inherit system;
           hostname = "vm";
           configName = "gnome";
-          server = false;
         };
         livecd = mkConfig {
           inherit system;
           hostname = "livecd";
           configName = "gnome";
-          server = false;
         };
 
         # Not amd64
@@ -57,7 +57,6 @@
           system = "aarch64-linux";
           hostname = "raspberrypi";
           configName = "none";
-          server = false;
         };
       };
 
