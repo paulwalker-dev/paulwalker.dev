@@ -10,7 +10,7 @@
         ../systems/${configName}.nix
         ../hardware/${hardware}.nix
         { networking.hostName = hostname; }
-        (import ./vm.nix { inherit users; })
+        ./vm.nix # For `sys vm`
       ] ++ (if remote then [{
         users.users.admin.openssh.authorizedKeys.keys = builtins.concatLists
           (nixpkgs.lib.mapAttrsToList (name: user: user.ssh)
