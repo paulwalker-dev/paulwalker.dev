@@ -51,6 +51,15 @@
           configName = "gnome";
           server = false;
         };
+
+        # Not amd64
+        raspberrypi = mkConfig {
+          system = "aarch64-linux";
+          hostname = "raspberrypi";
+          #configName = "none";
+          configName = "gnome";
+          server = false;
+        };
       };
 
       deploy.nodes = {
@@ -58,6 +67,12 @@
           inherit system;
           hostname = "www.paulwalker.dev";
           configName = "www";
+        };
+
+        raspberrypi = mkConfig {
+          system = "aarch64-linux";
+          hostname = "raspberrypi";
+          configName = "raspberrypi";
         };
       };
 

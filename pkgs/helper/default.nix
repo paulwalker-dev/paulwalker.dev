@@ -40,6 +40,9 @@ pkgs.writeShellScriptBin "sys" ''
       vm)
         sys_build vm vm
         ;;
+      rpi)
+        sys_build raspberrypi sdImage
+        ;;
       *)
         echo "No valid subcommand given"
         exit 1
