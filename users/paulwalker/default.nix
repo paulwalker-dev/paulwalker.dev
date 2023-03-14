@@ -33,17 +33,12 @@
   };
 
   programs = {
-    # Shell stuff
     bash.enable = true;
-    tmux.enable = true;
-
     fzf.enable = true;
-    starship.enable = true;
 
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
 
-    # Graphical Apps
     alacritty = {
       enable = true;
       settings = {
@@ -52,10 +47,9 @@
           lines = 24;
         };
         font = {
-          # normal.family = "Unifont";
-          # bold.style = "Regular";
-          # size = 12;
-          size = 9;
+          normal.family = "Unifont";
+          bold.style = "Regular";
+          size = 12;
         };
       };
     };

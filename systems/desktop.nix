@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  imports = [ ./kde.nix ];
+  imports = [ ./gnome.nix ];
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
