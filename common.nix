@@ -1,5 +1,5 @@
 { lib, pkgs, ... }: {
-  nix.settings.trusted-users = [ "@wheel" ];
+  nix.settings.trusted-users = [ "admin" ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.cleanTmpDir = true;

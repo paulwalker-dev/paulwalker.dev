@@ -57,6 +57,7 @@
           system = "aarch64-linux";
           hostname = "raspberrypi";
           configName = "none";
+          remote = true;
         };
       };
 
