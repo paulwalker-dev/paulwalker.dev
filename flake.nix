@@ -25,7 +25,7 @@
         www = mkConfig {
           inherit system;
           hostname = "www";
-          hardware = "onegrid";
+          hardware = "vm";
         };
 
         desktop = mkConfig {
@@ -43,12 +43,7 @@
           inherit system;
           hostname = "vm";
           configName = "gnome";
-          hardware = "onegrid";
           server = false;
-        };
-        kexec = mkConfig {
-          inherit system;
-          hostname = "none";
         };
         livecd = mkConfig {
           inherit system;

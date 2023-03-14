@@ -8,6 +8,8 @@
     # Internet
     chromium
     firefox
+    # Why is this not included
+    file
   ];
 
   dconf = {
