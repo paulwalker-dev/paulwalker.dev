@@ -56,7 +56,7 @@
         raspberrypi = mkConfig {
           system = "aarch64-linux";
           hostname = "raspberrypi";
-          configName = "unattend";
+          configName = "none";
           remote = true;
         };
       };
