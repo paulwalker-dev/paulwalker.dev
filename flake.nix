@@ -56,8 +56,7 @@
         raspberrypi = mkConfig {
           system = "aarch64-linux";
           hostname = "raspberrypi";
-          #configName = "none";
-          configName = "gnome";
+          configName = "none";
           server = false;
         };
       };
