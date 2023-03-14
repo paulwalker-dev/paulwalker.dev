@@ -1,7 +1,10 @@
 { nixpkgs, deploy-rs, home-manager, nixosConfigurations }: {
   mkConfig = { system, hostname, configName ? hostname, hardware ? hostname
     , server ? false, remote ? server, ... }:
-    let users = import ../users;
+    let
+      accounts = import ../users;
+      admins = nixpkgs.lib.filterAttrs (name: user: user.admin) accounts;
+      users = nixpkgs.lib.filterAttrs (name: user: user.normalUser) accounts;
     in nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit hostname users; };
@@ -13,8 +16,7 @@
         ./vm.nix # For `sys vm`
       ] ++ (if remote then [{
         users.users.admin.openssh.authorizedKeys.keys = builtins.concatLists
-          (nixpkgs.lib.mapAttrsToList (name: user: user.ssh)
-            (nixpkgs.lib.filterAttrs (name: user: user.admin) users));
+          (nixpkgs.lib.mapAttrsToList (name: user: user.ssh) admins);
       }] else
         [ ]) ++ (if server then [{
           users.mutableUsers = false;
