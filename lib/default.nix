@@ -27,6 +27,7 @@
           users.users = builtins.mapAttrs (name: user: {
             isNormalUser = true;
             extraGroups = if user.admin then [ "wheel" ] else [ ];
+            openssh.authorizedKeys.keys = user.ssh;
           }) users;
         }
       ]);
