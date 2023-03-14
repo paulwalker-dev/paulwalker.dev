@@ -47,7 +47,7 @@
           columns = 80;
           lines = 24;
         };
-        font.size = 9;
+        font.size = 10;
       };
     };
 
