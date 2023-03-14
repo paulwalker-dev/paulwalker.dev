@@ -1,4 +1,6 @@
 { lib, pkgs, ... }: {
+  imports = [ ./unattend.nix ];
+
   services.nginx = {
     enable = true;
     virtualHosts."www.paulwalker.dev" = {
