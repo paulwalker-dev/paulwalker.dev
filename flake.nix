@@ -67,12 +67,6 @@
           hostname = "www.paulwalker.dev";
           configName = "www";
         };
-
-        raspberrypi = mkNode {
-          system = "aarch64-linux";
-          hostname = "raspberrypi";
-          configName = "raspberrypi";
-        };
       };
 
       devShells.${system}.default = pkgs.mkShell {
